@@ -21,10 +21,10 @@
             </li>
             @if(Session::has('user'))
             <li class="nav-item">
-                <a class="nav-link" href="/contactList">Contact List</a>
+                <a class="nav-link" href="/contact/contactList">Contact List</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/add">add contact</a>
+                <a class="nav-link" href="/contact/add">add contact</a>
               </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -38,7 +38,7 @@
                   <a href="/logout">logout</a>
               </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0" action="/search" method="POST">
+          <form class="form-inline my-2 my-lg-0" action="/contact/search" method="POST">
             @csrf
             <input class="form-control mr-sm-2" type="search" placeholder="Search" name="searchString">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

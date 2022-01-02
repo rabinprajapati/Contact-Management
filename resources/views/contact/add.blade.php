@@ -5,7 +5,7 @@
             <h1>add contact page</h1>
         </div>
         <div class="row">
-            <form action="/addContact" method="POST">
+            <form action="/contact/addContact" method="POST">
                 @csrf
                 <div class="form-group">
                   <label for="exampleInputEmail1">name</label>

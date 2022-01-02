@@ -28,9 +28,9 @@
                     {{$contact->contactPhone}}
                 </div> 
                 <div class="col-sm-3">
-                    <a href="/edit/{{$contact->id}}"><button class="btn btn-primary">edit</button></a>
-                    <a href="/delete/{{$contact->id}}"><button class="btn btn-danger">delete</button></a>
-                    <a href="/detail/{{$contact->id}}"><button class="btn btn-success">detail</button></a>
+                    <a href="/contact/edit/{{$contact->id}}"><button class="btn btn-primary">edit</button></a>
+                    <a href="/contact/delete/{{$contact->id}}"><button class="btn btn-danger">delete</button></a>
+                    <a href="/contact/detail/{{$contact->id}}"><button class="btn btn-success">detail</button></a>
                 </div> 
             </div>      
             <hr>  

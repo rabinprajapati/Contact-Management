@@ -27,12 +27,12 @@ class ContactController extends Controller
     {
         $userId=Session::get('user')->id;
         $contacts=Contact::where('userId','=',$userId)->get();
-        return view('/contact/contactList',['contacts'=>$contacts]);
+        return view('contact/contactList',['contacts'=>$contacts]);
     }
     protected function detail($id)
     {
         $contact=Contact::find($id);
-        return view('/contact/detail',['contact'=>$contact]);
+        return view('contact/detail',['contact'=>$contact]);
     }
     protected function search(Request $req)
     {
@@ -45,7 +45,7 @@ class ContactController extends Controller
     protected function edit($id)
     {
         $contact=Contact::find($id);
-        return view('/contact/edit',['contact'=>$contact]);
+        return view('contact/edit',['contact'=>$contact]);
     }
     protected function updateContact(Request $req,$id)
     {
@@ -54,11 +54,11 @@ class ContactController extends Controller
         $contact->contactAddress=$req->contactAddress;
         $contact->contactPhone=$req->contactPhone;
         $contact->save();
-        return redirect('/contactList');
+        return redirect('contact/contactList');
     }
     protected function delete($id)
     {
         Contact::find($id)->delete();
-        return redirect('/contactList');
+        return redirect('contact/contactList');
     }
 }

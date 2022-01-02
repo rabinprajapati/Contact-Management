@@ -24,14 +24,18 @@ Route::post('/register',[UserController::class,'register']);
 Route::post('/login',[UserController::class,'login']);
 Route::get('/logout',[UserController::class,'logout']);
 
-Route::view('/add',[ContactController::class,'contact/add'])->middleware('guard');
-Route::post('/addContact',[ContactController::class,'addContact'])->middleware('guard');
-Route::get('/contactList',[ContactController::class,'contactList'])->middleware('guard');
-Route::get('/detail/{id}',[ContactController::class,'detail'])->middleware('guard');
-Route::get('/delete/{id}',[ContactController::class,'delete'])->middleware('guard');
-Route::post('/search',[ContactController::class,'search'])->middleware('guard');
-Route::get('/edit/{id}',[ContactController::class,'edit'])->middleware('guard');
-Route::post('/updateContact/{id}',[ContactController::class,'updateContact'])->middleware('guard');
+Route::group(['prefix'=>'/contact','middleware'=>['guard']],function()
+{
+    Route::view('/add',[ContactController::class,'contact/add']);
+    Route::post('/addContact',[ContactController::class,'addContact']);
+    Route::get('/contactList',[ContactController::class,'contactList']);
+    Route::get('/detail/{id}',[ContactController::class,'detail']);
+    Route::get('/delete/{id}',[ContactController::class,'delete']);
+    Route::post('/search',[ContactController::class,'search']);
+    Route::get('/edit/{id}',[ContactController::class,'edit']);
+    Route::post('/updateContact/{id}',[ContactController::class,'updateContact']);
+});
+
 
 
 

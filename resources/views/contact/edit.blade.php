@@ -5,7 +5,7 @@
             <h1>edit contact page</h1>
         </div>
         <div class="row">
-            <form action="/updateContact/{{$contact->id}}" method="POST">
+            <form action="/contact/updateContact/{{$contact->id}}" method="POST">
                 @csrf
                 <div class="form-group">
                   <label for="exampleInputEmail1">name</label>
