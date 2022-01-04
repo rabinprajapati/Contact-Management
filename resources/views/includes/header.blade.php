@@ -26,6 +26,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="/contact/add">add contact</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact/favourite">favourite contact</a>
+              </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {{Session::get('user')->userName}}

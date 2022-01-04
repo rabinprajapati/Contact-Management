@@ -18,6 +18,7 @@ class CreateContactsTable extends Migration
             $table->string('contactName');
             $table->string('contactPhone');
             $table->string('contactAddress');
+            $table->string('favourite')->default('false');
             $table->string('userId');
             $table->timestamps();
         });

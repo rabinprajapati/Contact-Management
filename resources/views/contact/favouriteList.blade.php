@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+<h1>fajdkfsjkdfjksdj</h1>
     <div class="container">
         <div class="row">
             <div class="col-sm-3">
@@ -8,10 +9,10 @@
             <div class="col-sm-3">
                 <h2>address</h2>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                 <h2>phone</h2>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-4">
                 <h2>actions</h2>
             </div>
         </div>
@@ -24,11 +25,11 @@
                 <div class="col-sm-3">
                     {{$contact->contactAddress}}
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     {{$contact->contactPhone}}
                 </div> 
-                <div class="col-sm-3">
-                    <a href="/contact/favourite/{{$contact->id}}"><button class="btn btn-success">fav</button></a>
+                <div class="col-sm-4">
+                    <a href="/contact/unfavourite/{{$contact->id}}"><button class="btn btn-success">un fav</button></a>
                     <a href="/contact/edit/{{$contact->id}}"><button class="btn btn-primary">edit</button></a>
                     <a href="/contact/delete/{{$contact->id}}"><button class="btn btn-danger">delete</button></a>
                     <a href="/contact/detail/{{$contact->id}}"><button class="btn btn-warning">detail</button></a>

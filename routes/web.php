@@ -34,6 +34,10 @@ Route::group(['prefix'=>'/contact','middleware'=>['guard']],function()
     Route::post('/search',[ContactController::class,'search']);
     Route::get('/edit/{id}',[ContactController::class,'edit']);
     Route::post('/updateContact/{id}',[ContactController::class,'updateContact']);
+
+    Route::get('/favourite',[ContactController::class,'favouriteList']);
+    Route::get('/unfavourite/{id}',[ContactController::class,'unfavourite']);
+    Route::get('/favourite/{id}',[ContactController::class,'addToFavourite']);
 });
 
 

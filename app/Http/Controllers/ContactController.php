@@ -61,4 +61,28 @@ class ContactController extends Controller
         Contact::find($id)->delete();
         return redirect('contact/contactList');
     }
+
+    protected function addToFavourite($id)
+    {
+        $contact=Contact::find($id);
+        $contact->favourite='true';
+        $contact->save();
+        return redirect('contact/contactList');
+
+    }
+
+    protected function favouriteList()
+    {
+        $userId=Session::get('user')->id;
+        $contacts=Contact::where(['favourite'=>'true'])->where(['userId'=>$userId])->get(); 
+        return view('/contact/favouriteList',['contacts'=>$contacts]); 
+    }
+    protected function unfavourite($id)
+    {
+        $contact=Contact::find($id);
+        $contact->favourite='false';
+        $contact->save();
+        return redirect('/contact/favourite');
+    }
 }
+
