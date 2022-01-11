@@ -1,6 +1,10 @@
 @extends('layout')
 @section('content')
-<h1>fajdkfsjkdfjksdj</h1>
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
     <div class="container">
         <div class="row">
             <div class="col-sm-3">

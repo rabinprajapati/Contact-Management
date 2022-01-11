@@ -9,7 +9,7 @@
                 @csrf
                 <div class="form-group">
                   <label for="exampleInputEmail1">name</label>
-                  <input type="text" class="form-control" name="contactName" placeholder="Enter name">
+                  <input type="text" class="form-control" name="contactName" value="{{old('contactName')}}" placeholder="Enter name">
                   <span class="text-danger">
                     @error('contactName')
                     {{$message}}
@@ -18,7 +18,7 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">adderss</label>
-                  <input type="text" class="form-control" name="contactAddress" placeholder="entre address">
+                  <input type="text" class="form-control" name="contactAddress" value="{{old('contactAddress')}}" placeholder="entre address">
                   <span class="text-danger">
                     @error('contactAddress')
                     {{$message}}
@@ -27,7 +27,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">phone</label>
-                    <input type="text" class="form-control" name="contactPhone" placeholder="entre phone">
+                    <input type="text" class="form-control" name="contactPhone" value="{{old('contactPhone')}}" placeholder="entre phone">
                     <span class="text-danger">
                       @error('contactPhone')
                       {{$message}}

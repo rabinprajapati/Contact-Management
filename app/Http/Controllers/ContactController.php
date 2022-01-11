@@ -49,17 +49,22 @@ class ContactController extends Controller
     }
     protected function updateContact(Request $req,$id)
     {
+        $req->validate([
+            'contactName' => 'required|min:3|max:20',
+            'contactAddress' => 'required|min:3|max:30',
+            'contactPhone' => 'required|min:7|max:10',
+        ]);
         $contact=Contact::find($id);
         $contact->contactName=$req->contactName;
         $contact->contactAddress=$req->contactAddress;
         $contact->contactPhone=$req->contactPhone;
         $contact->save();
-        return redirect('contact/contactList');
+        return redirect('contact/contactList')->with('status','contact updated');
     }
     protected function delete($id)
     {
         Contact::find($id)->delete();
-        return redirect('contact/contactList');
+        return redirect('contact/contactList')->with('status','contact deleted');
     }
 
     protected function addToFavourite($id)
@@ -67,7 +72,7 @@ class ContactController extends Controller
         $contact=Contact::find($id);
         $contact->favourite='true';
         $contact->save();
-        return redirect('contact/contactList');
+        return redirect('contact/contactList')->with('status','added to fav list');
 
     }
 
@@ -82,7 +87,7 @@ class ContactController extends Controller
         $contact=Contact::find($id);
         $contact->favourite='false';
         $contact->save();
-        return redirect('/contact/favourite');
+        return redirect('/contact/favourite')->with('status','contact removed from fav');
     }
 }
 
